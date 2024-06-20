@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #000 url('https://i.redd.it/2obw9yylddr51.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#gameContainer {
+    position: relative;
+    width: 800px;
+    height: 600px;
+}
+
+#GameCanvas {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+#resetButton {
+    position: absolute;
+    top: calc(50% + 60px); /* Vị trí dưới game canvas */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: none; /* Ban đầu ẩn nút reset */
+}
+
+#gameOverText {
+    position: absolute;
+    top: 20px; /* Vị trí trên cùng của màn hình */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 40px;
+    color: red;
+    display: none; /* Ban đầu ẩn văn bản "Game Over" */
+}
+
+.hidden {
+    display: none !important; /* Class để ẩn phần tử */
+}
+/* Bổ sung kiểu hiển thị cho phần tử khi game đang kết thúc */
+#resetButton:not(.hidden),
+#gameOverText:not(.hidden) {
+    display: block !important;
+}
